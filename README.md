@@ -1,4 +1,5 @@
 # Onskor Project
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/denislour/onskor/blob/master/LICENSE)
 
 A WordPress-like blog app implemented in Wagtail.
 
