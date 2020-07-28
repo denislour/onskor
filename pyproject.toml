@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "onskor"
+version = "0.1.0"
+description = ""
+authors = ["Lektor <denislour@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = ">=3.0,<3.1"
+wagtail = ">=2.9,<2.10"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
