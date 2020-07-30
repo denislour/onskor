@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags %}
 {% block content %}
-    {{ self.subtitle }} is subtitle
+    <div>
+        {{ self.subtitle }}
+    </div>
+    {% for block in page.content %}
+        {% include_block block  %}
+    {% endfor %}
 {% endblock %}
