@@ -17,7 +17,11 @@ class FlexPage(Page):
 
     # Wagtail models
     content = StreamField(
-        [("title_and_text", blocks.TitleAndTextBlock())], blank=True, null=True
+        [
+            ("title_and_text", blocks.TitleAndTextBlock()),
+            ("full_rich_text", blocks.FullRichTextBlock()),
+            ("simple_rich_text", blocks.SimpleRichTextBlock()),
+        ], blank=True, null=True
     )
 
     # Add the all of fields to Wagtail panels

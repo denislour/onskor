@@ -11,7 +11,7 @@ class HomePage(Page):
         Home page model.
     """
 
-    templates = "home/home.html"
+    template = "home/home.html"
 
     # Only one home page instance at a time
     max_count = 1
