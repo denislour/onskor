@@ -1,4 +1,5 @@
 from wagtail.core import blocks
+from wagtail.images.blocks import ImageChooserBlock
 
 
 class TitleAndTextBlock(blocks.StructBlock):
@@ -13,6 +14,34 @@ class TitleAndTextBlock(blocks.StructBlock):
         template = "streams/title_and_text_block.html"
         icon = "edit"
         label = "Title & Text"
+
+
+class CardBlock(blocks.StructBlock):
+    """
+    List Block is a block can be `ADD MORE` in one specify block
+    For ex in card block when we created in Wagtail:
+        - Only one `title` block can be added
+        - Multi `card` block can be added 
+    """
+
+    title = blocks.CharBlock(required=True, help_text='Single Block title')
+
+    # List Block
+    cards = blocks.ListBlock(blocks.StructBlock([
+        ('image', ImageChooserBlock(required=True)),
+        ('title', blocks.CharBlock(required=True, max_length=40)),
+        ('text', blocks.TextBlock(required=True, max_length=200)),
+        ('button_page', blocks.PageChooserBlock(required=False)),
+        ('button_url', blocks.URLBlock(
+            required=False,
+            help_text="If button page above is selected, that will be used."
+        ))
+    ]))
+
+    class Meta:
+        template = "streams/card_block.html"
+        icon = "placeholder"
+        label = "Card Staff"
 
 
 class FullRichTextBlock(blocks.RichTextBlock):
